@@ -19,7 +19,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
-  "exclude": [
+  "exclude": [ 
     // "node_modules",
     "build",
     "scripts",
