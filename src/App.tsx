@@ -6,6 +6,7 @@ import GymRats from './GymRats.png';
 
 
 
+
 interface IState {
 	curGym: any,
 	gyms: any[],
@@ -33,21 +34,17 @@ class App extends React.Component<{}, IState> {
 		
 		return (
 		<div>
-			<div className="header-wrapper">
-				<div className="container header">
+			<div className="header-wrapper w3-mobile">
+				<div className="container header w3-mobile">
 					<img src={GymRats} height='120'/>&nbsp; Design Your Body &nbsp;
-					<select>
-    					<option value="val1">English</option>
-       				 	<option value="val2">Korean</option>
-    				</select>
 				</div>
 			</div>
 			<div className="container">
-				<div className="row">
-					<div className="col-7">
+				<div className="w3-row">
+					<div className="w3-container w3-half">
 						<GymMotions curGym={this.state.curGym} />
 					</div>
-					<div className="col-5">
+					<div className="w3-container w3-half">
 						<GymList gyms={this.state.gyms} selectNewGym={this.selectNewGym} searchByTag={this.fetchGyms}/>
 					</div>
 				</div>
@@ -85,6 +82,15 @@ class App extends React.Component<{}, IState> {
 				gyms: json
 			})
 		});
+
+			//////////////////////////////
+
+			
+
+
+
+
+
 	}
 
 	
