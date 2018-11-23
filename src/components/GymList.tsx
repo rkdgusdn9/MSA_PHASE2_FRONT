@@ -2,6 +2,7 @@ import * as React from "react";
 import MediaStreamRecorder from '../../node_modules/msr';
 
 
+
 interface IProps {
     gyms: any[],
     selectNewGym: any,
@@ -80,11 +81,11 @@ export default class GymList extends React.Component<IProps, {}> {
                 });
     
                 console.log(accessToken); 
-            
+
                 ///////////////////////////////////
                 const textBox = document.getElementById("search-tag-textbox") as HTMLInputElement
                 // posting audio
-                fetch('https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1', {
+                fetch('https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US', {
                     body: blob, // this is a .wav audio file    
                     headers: {
                         'Accept': 'application/json',
@@ -97,8 +98,7 @@ export default class GymList extends React.Component<IProps, {}> {
                     return res.json()
                 }).then((res: any) => {
                     console.log(res)
-                    textBox.value = (res.DisplayText as string).slice(0, -1)
-    
+                    textBox.value = (res.DisplayText as string).slice(0,-1)   
                 }).catch((error) => {
                     console.log("Error", error)
                 });
@@ -106,7 +106,7 @@ export default class GymList extends React.Component<IProps, {}> {
         }
 
 
-
+ //  .slice(0, -1)
 
 
 

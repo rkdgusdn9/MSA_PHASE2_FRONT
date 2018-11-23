@@ -75,7 +75,7 @@ class App extends React.Component<{}, IState> {
 		.then(json => {
 			let curGym = json[0]
 			if (curGym === undefined) {
-				curGym = {"id":0, "name":"No Workout found","url":"","bigPart":"try a different part","uploaded":"","width":"0","height":"0"}
+				curGym = {"id":0, "name":"No Workout found","url":"","bigPart":"Input Correct Big Part","uploaded":"","width":"0","height":"0"}
 			}
 			this.setState({
 				curGym,

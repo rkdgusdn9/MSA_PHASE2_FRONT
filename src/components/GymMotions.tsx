@@ -36,9 +36,9 @@ export default class GymMotions extends React.Component<IProps, IState> {
         const { open1 } = this.state;
 		return (
 			<div className="w3-container w3-mobile">
-                <div className="w3-panel w3-card w3-round-xlarge">
-                <div className="gym-heading">
-                    <b>{curGym.name}</b>&nbsp; ({curGym.bigPart}/{curGym.smallPart})
+                <div className="w3-panel w3-card w3-round-xlarge" >
+                <div className="gym-heading" >
+                    <b>{curGym.name}</b>&nbsp; {curGym.bigPart} / {curGym.smallPart}
                 </div>
                 <div className="gym-date">
                     {curGym.uploaded}
