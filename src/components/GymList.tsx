@@ -60,7 +60,7 @@ export default class GymList extends React.Component<IProps, {}> {
             console.error('media error', e);
         }
 
-        function postAudio(blob){
+        function postAudio(blob:any){
 
             let accessToken: any;
                 fetch('https://westus.api.cognitive.microsoft.com/sts/v1.0/issueToken', {
