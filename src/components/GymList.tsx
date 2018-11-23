@@ -1,5 +1,5 @@
 import * as React from "react";
-import MediaStreamRecorder from '../../node_modules/msr';
+import MediaStreamRecorder from 'msr';
 
 
 
