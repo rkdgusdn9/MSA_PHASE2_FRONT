@@ -49,7 +49,9 @@ class App extends React.Component<{}, IState> {
 					</div>
 				</div>
 			</div>
-			
+			<footer className="footer">
+				Copyright © 2018 All Rights Reserved
+			</footer>
 		</div>
 		);
 	}

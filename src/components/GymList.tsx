@@ -127,7 +127,7 @@ export default class GymList extends React.Component<IProps, {}> {
         }
         
         table.push(<tr className="w3-blue w3-card">
-            <th>ID</th>
+           {/*<th>ID</th>*/}  
             <th>Name</th>
             <th>Big Part</th>
             <th>Small Part</th>
@@ -137,7 +137,7 @@ export default class GymList extends React.Component<IProps, {}> {
         for (let i = 0; i < gymList.length; i++) {
             const children: any[] = []
             const gym = gymList[i]
-            children.push(<td key={"id" + i}>{gym.id}</td>)
+            // children.push(<td key={"id" + i}>{gym.id}</td>)
             children.push(<td key={"name" + i}>{gym.name}</td>)
             children.push(<td key={"bigpart" + i}>{gym.bigPart}</td>)
             children.push(<td key={"smallpart" + i}>{gym.smallPart}</td>)

@@ -59,19 +59,28 @@ export default class GymMotions extends React.Component<IProps, IState> {
 				<form className="w3-animate-opacity">
 					<div className="form-group">
 						<label className="w3-text-blue">Workout Name</label>
-						<input type="text" className="w3-input w3-border-blue" id="meme-title-input" placeholder="Enter Name" />
+						<input type="text" className="w3-input w3-border-blue" id="name-input" placeholder="Enter Name" />
 					</div>
 					<div className="form-group">
 						<label className="w3-text-blue">Big Part</label>
-						<input type="text" className="w3-input w3-border-blue" id="meme-tag-input" placeholder="Big Part" />
+                        <br/>
+                    <select id="bigpart-input">
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Leg">Leg</option>
+                    <option value="Arm">Arm</option>
+                    <option value="Shoulder">Shoulder</option>
+                    <option value="Abs">Abs</option>
+                    </select>
 					</div>
+                    <br />
 					<div className="form-group">
 						<label className="w3-text-blue">Small Part</label>
-						<input type="text" className="w3-input w3-border-blue" id="meme-small-input" placeholder="Small Part" />
+						<input type="text" className="w3-input w3-border-blue" id="smallpart-input" placeholder="Small Part" />
 					</div>
                     <div className="form-group">
 						<label className="w3-text-blue">Direction</label>
-						<input type="text" className="w3-input w3-border-blue" id="meme-direction-input" placeholder="Direction" />
+						<input type="text" className="w3-input w3-border-blue" id="direction-input" placeholder="Direction" />
 					</div>
 					<div className="form-group">
 						<label className="w3-text-blue">Image</label>
@@ -85,19 +94,28 @@ export default class GymMotions extends React.Component<IProps, IState> {
                         <form className="w3-animate-opacity">
                             <div className="form-group">
                                 <label className="w3-text-red">Workout Name</label>
-                                <input type="text" className="w3-input w3-border-red" id="meme-edit-title-input" placeholder="Enter Name"/>
+                                <input type="text" className="w3-input w3-border-red" id="name-edit-input" placeholder="Enter Name"/>
                             </div>
                             <div className="form-group">
-                                <label className="w3-text-red">Big Part</label>
-                                <input type="text" className="w3-input w3-border-red" id="meme-edit-tag-input" placeholder="Enter Big Part"/>
-                            </div>
+                            <label className="w3-text-red">Big Part</label>
+                             <br/>
+                            <select id="bigpart-edit-input">
+                            <option value="Chest">Chest</option>
+                            <option value="Back">Back</option>
+                            <option value="Leg">Leg</option>
+                            <option value="Arm">Arm</option>
+                            <option value="Shoulder">Shoulder</option>
+                            <option value="Abs">Abs</option>
+                            </select>
+					        </div>
+                            <br />
                             <div className="form-group">
                                 <label className="w3-text-red">Small Part</label>
-                                <input type="text" className="w3-input w3-border-red" id="meme-edit-small-input" placeholder="Enter Small Part"/>
+                                <input type="text" className="w3-input w3-border-red" id="smallpart-edit-input" placeholder="Enter Small Part"/>
                             </div>
                                 <div className="form-group">
                                 <label className="w3-text-red">Direction</label>
-                                <input type="text" className="w3-input w3-border-red" id="meme-direction-input" placeholder="Direction" />
+                                <input type="text" className="w3-input w3-border-red" id="direction-edit-input" placeholder="Direction" />
                             </div>
                             <button type="button" className="w3-btn w3-red w3-round-xlarge" onClick={this.updateGym}>Save</button>
                         </form>
@@ -133,10 +151,10 @@ export default class GymMotions extends React.Component<IProps, IState> {
 	}
 
     private uploadGym() {
-		const NameInput = document.getElementById("meme-title-input") as HTMLInputElement
-		const BigPartInput = document.getElementById("meme-tag-input") as HTMLInputElement
-        const SmallPartInput = document.getElementById("meme-small-input") as HTMLInputElement
-        const DirectionInput = document.getElementById("meme-direction-input") as HTMLInputElement
+		const NameInput = document.getElementById("name-input") as HTMLInputElement
+		const BigPartInput = document.getElementById("bigpart-input") as HTMLInputElement
+        const SmallPartInput = document.getElementById("smallpart-input") as HTMLInputElement
+        const DirectionInput = document.getElementById("direction-input") as HTMLInputElement
 		const imageFile = this.state.uploadFileList[0]
 	
 		if (NameInput === null || BigPartInput === null || SmallPartInput === null || DirectionInput === null || imageFile === null) {
@@ -172,10 +190,10 @@ export default class GymMotions extends React.Component<IProps, IState> {
 	}
 
     private updateGym(){
-        const nameInput = document.getElementById("meme-edit-title-input") as HTMLInputElement
-        const bigPartInput = document.getElementById("meme-edit-tag-input") as HTMLInputElement
-        const smallPartInput = document.getElementById("meme-edit-small-input") as HTMLInputElement
-        const DirectionInput = document.getElementById("meme-direction-input") as HTMLInputElement
+        const nameInput = document.getElementById("name-edit-input") as HTMLInputElement
+        const bigPartInput = document.getElementById("bigpart-edit-input") as HTMLInputElement
+        const smallPartInput = document.getElementById("smallpart-edit-input") as HTMLInputElement
+        const DirectionInput = document.getElementById("direction-edit-input") as HTMLInputElement
     
         if (nameInput === null || bigPartInput === null || smallPartInput === null || DirectionInput === null) {
             return;
